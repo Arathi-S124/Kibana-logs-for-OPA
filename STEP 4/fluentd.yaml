@@ -7,8 +7,7 @@ metadata:
     app: fluentd
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole							#need ClusterRole to grant access to 
-									#cluster-scoped Nodes
+kind: ClusterRole							#need ClusterRole to grant access to cluster-scoped Nodes
 metadata:
   name: fluentd
   labels:
