@@ -10,13 +10,6 @@ Apart from the default, kube-system and kube-public namespaces we are going to m
 nano kube-logs.yaml
 ```
 
-```
-kind: Namespace
-apiVersion: v1
-metadata:
-  name: kube-logs
-```
-
 Once the file is saved this object file is needed to be applied:-
 
 ```
