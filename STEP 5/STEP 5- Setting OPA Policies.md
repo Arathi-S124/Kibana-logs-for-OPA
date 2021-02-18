@@ -1,5 +1,3 @@
-STEP 5:- Apply OPA Policy in the Namespace
-
 Make sure you have Gatekeeper up and running, if not begin by doing
 
 ```
