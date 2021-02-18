@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: build-robot
+  namespace: kube-system
+  resourceVersion: "272500"
+  uid: 721ab723-13bc-11e5-aec2-42010af0021e

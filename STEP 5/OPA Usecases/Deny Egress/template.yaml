@@ -1,0 +1,20 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8sdenyegress
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sDenyEgress
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8sdenyegress 
+        violation [{"msg": msg}] {
+         # input.review.object.metadata.namespace == "loadbalancer"               #Checks if the namespace used is "loadbalancer"
+         # some i
+         # input.review.object.spec.policyTypes[i] == "Egress"                    #Checks if the policy type is "Egress"
+         # msg := "You cannot apply Egress rules to the loadbalancer namespace."  #Deny message
+ 
+        }

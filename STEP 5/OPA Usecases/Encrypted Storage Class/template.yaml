@@ -1,0 +1,18 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8sencrypted
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sEncrypted
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8sencrypted 
+        violation [{"msg": msg}] {
+          #input.review.object.kind == "StorageClass"           #Ensures it is Storage Class
+          #input.review.object.parameters.encrypted == "false"  #Checks if the encrypted field is true or false
+          #msg := "StorageClass is not encrypted."              #Violation message
+        }

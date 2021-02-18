@@ -1,0 +1,18 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8sprivilegedcontainer
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sPrivilegedContainer
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8sprivilegedcontainer
+        violation [{"msg": msg}] {
+          #input.review.object.kind == "Pod"                                        #Ensures it is Pod
+          #input.review.object.spec.containers.securityContext.privileged == true   #Checks for privileged field under Security Context 
+          #msg := "Privileged containers are not allowed."                          #Violation message if privilege container found
+        }
