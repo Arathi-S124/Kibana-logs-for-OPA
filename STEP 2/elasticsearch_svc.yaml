@@ -1,0 +1,16 @@
+kind: Service 					#defining kind of object
+apiVersion: v1
+metadata:
+  name: elasticsearch				#stating name 
+  namespace: kube-logs		 	        #referring to the namespace which is in use
+  labels:
+    app: elasticsearch				
+spec:
+  selector:
+    app: elasticsearch
+  clusterIP: None
+  Ports:					
+    - port: 9200				#define port to interact with REST API 
+      name: rest
+    - port: 9300				##define port for inter node communication
+      name: inter-node
