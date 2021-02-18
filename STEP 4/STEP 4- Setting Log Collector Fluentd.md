@@ -112,10 +112,15 @@ in our Kubernetes cluster. Go to Kibana and verify that log data is being correc
 is being shipped to Elasticsearch.
 In the Kibana Interface 
 1. Click Discover (Left Navigation Menu)
+
+![Discover](https://user-images.githubusercontent.com/62760235/108326697-902ead80-71f0-11eb-83a6-9cdff43658e0.png)
+
 2. Choose to create Index Pattern
 3. In the Index Pattern mention logstash-*. Using this we shall require all logs of our elasticsearch
    cluster.  Instead of logstash-* we can use any index pattern of our choice.
 4. In Configure Settings select @timestamp in the dropdown and hit Create Index Pattern.
 5. Now check Discover menu from the left to see logs.
+
+![First Look](https://user-images.githubusercontent.com/62760235/108326979-e4d22880-71f0-11eb-92c3-fb22cd1a2c5d.png)
 
 We have successfully configured and rolled out the EFK stack on your Kubernetes cluster. 
