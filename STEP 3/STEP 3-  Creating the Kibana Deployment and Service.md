@@ -70,3 +70,5 @@ Now access Kibana on web browser:-
 ```
 http://localhost:5601
 ```
+
+![Kibana](https://user-images.githubusercontent.com/62760235/108327188-1a771180-71f1-11eb-8735-c9ebfb87d0bb.png)
